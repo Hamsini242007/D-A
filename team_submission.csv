@@ -1,0 +1,101 @@
+candidate_id,rank,score,reasoning
+CAND_0072660,1,1.0,Machine Learning Engineer with 7.1 yrs; hybrid AI ranking score 65.68; response rate 0.53.
+CAND_0091254,2,0.990104,AI Research Engineer with 5.2 yrs; hybrid AI ranking score 65.03; response rate 0.53.
+CAND_0084498,3,0.97229,Junior ML Engineer with 3.1 yrs; hybrid AI ranking score 63.86; response rate 0.36.
+CAND_0048660,4,0.967266,ML Engineer with 5.2 yrs; hybrid AI ranking score 63.53; response rate 0.32.
+CAND_0021491,5,0.958739,AI Research Engineer with 6.1 yrs; hybrid AI ranking score 62.97; response rate 0.61.
+CAND_0040200,6,0.958739,AI Research Engineer with 5.5 yrs; hybrid AI ranking score 62.97; response rate 0.52.
+CAND_0020494,7,0.954476,AI Research Engineer with 5.9 yrs; hybrid AI ranking score 62.69; response rate 0.26.
+CAND_0052498,8,0.950822,ML Engineer with 4.7 yrs; hybrid AI ranking score 62.45; response rate 0.29.
+CAND_0089889,9,0.948538,Data Scientist with 4.3 yrs; hybrid AI ranking score 62.3; response rate 0.79.
+CAND_0030031,10,0.946407,AI Engineer with 5.7 yrs; hybrid AI ranking score 62.16; response rate 0.94.
+CAND_0001610,11,0.945646,Machine Learning Engineer with 3.0 yrs; hybrid AI ranking score 62.11; response rate 0.57.
+CAND_0080315,12,0.942448,AI Research Engineer with 4.1 yrs; hybrid AI ranking score 61.9; response rate 0.29.
+CAND_0081321,13,0.942296,Senior Software Engineer (ML) with 5.3 yrs; hybrid AI ranking score 61.89; response rate 0.47.
+CAND_0095858,14,0.938946,AI Research Engineer with 4.3 yrs; hybrid AI ranking score 61.67; response rate 0.28.
+CAND_0030348,15,0.938642,Machine Learning Engineer with 4.5 yrs; hybrid AI ranking score 61.65; response rate 0.54.
+CAND_0054318,16,0.937119,AI Research Engineer with 3.5 yrs; hybrid AI ranking score 61.55; response rate 0.87.
+CAND_0015478,17,0.936054,ML Engineer with 3.6 yrs; hybrid AI ranking score 61.48; response rate 0.66.
+CAND_0049615,18,0.935292,ML Engineer with 5.1 yrs; hybrid AI ranking score 61.43; response rate 0.28.
+CAND_0049771,19,0.934836,AI Research Engineer with 5.0 yrs; hybrid AI ranking score 61.4; response rate 0.81.
+CAND_0001819,20,0.934531,ML Engineer with 4.4 yrs; hybrid AI ranking score 61.38; response rate 0.75.
+CAND_0061655,21,0.932095,Machine Learning Engineer with 4.6 yrs; hybrid AI ranking score 61.22; response rate 0.88.
+CAND_0082262,22,0.928898,Senior Software Engineer (ML) with 5.9 yrs; hybrid AI ranking score 61.01; response rate 0.64.
+CAND_0091899,23,0.928745,Senior Software Engineer (ML) with 5.8 yrs; hybrid AI ranking score 61.0; response rate 0.51.
+CAND_0064256,24,0.928441,Junior ML Engineer with 6.4 yrs; hybrid AI ranking score 60.98; response rate 0.86.
+CAND_0008202,25,0.927527,Senior Software Engineer (ML) with 5.7 yrs; hybrid AI ranking score 60.92; response rate 0.50.
+CAND_0074648,26,0.927223,AI Research Engineer with 4.1 yrs; hybrid AI ranking score 60.9; response rate 0.82.
+CAND_0048509,27,0.926309,AI Research Engineer with 4.2 yrs; hybrid AI ranking score 60.84; response rate 0.60.
+CAND_0040099,28,0.924482,ML Engineer with 3.9 yrs; hybrid AI ranking score 60.72; response rate 0.69.
+CAND_0097472,29,0.924026,Junior ML Engineer with 5.8 yrs; hybrid AI ranking score 60.69; response rate 0.36.
+CAND_0070653,30,0.921437,AI Specialist with 5.0 yrs; hybrid AI ranking score 60.52; response rate 0.36.
+CAND_0095868,31,0.920981,Junior ML Engineer with 5.2 yrs; hybrid AI ranking score 60.49; response rate 0.60.
+CAND_0093530,32,0.919915,Senior Software Engineer (ML) with 3.2 yrs; hybrid AI ranking score 60.42; response rate 0.77.
+CAND_0075409,33,0.916565,Junior ML Engineer with 3.2 yrs; hybrid AI ranking score 60.2; response rate 0.81.
+CAND_0046353,34,0.916261,ML Engineer with 6.4 yrs; hybrid AI ranking score 60.18; response rate 0.73.
+CAND_0034169,35,0.915347,AI Research Engineer with 3.4 yrs; hybrid AI ranking score 60.12; response rate 0.73.
+CAND_0010541,36,0.914129,AI Research Engineer with 6.2 yrs; hybrid AI ranking score 60.04; response rate 0.59.
+CAND_0021729,37,0.914129,Junior ML Engineer with 3.5 yrs; hybrid AI ranking score 60.04; response rate 0.31.
+CAND_0098952,38,0.912759,AI Research Engineer with 5.5 yrs; hybrid AI ranking score 59.95; response rate 0.66.
+CAND_0025109,39,0.911084,Data Scientist with 4.5 yrs; hybrid AI ranking score 59.84; response rate 0.59.
+CAND_0018604,40,0.910627,Junior ML Engineer with 4.0 yrs; hybrid AI ranking score 59.81; response rate 0.47.
+CAND_0096142,41,0.910018,Applied ML Engineer with 5.0 yrs; hybrid AI ranking score 59.77; response rate 0.84.
+CAND_0032515,42,0.907734,Machine Learning Engineer with 5.1 yrs; hybrid AI ranking score 59.62; response rate 0.54.
+CAND_0007874,43,0.90743,Junior ML Engineer with 3.7 yrs; hybrid AI ranking score 59.6; response rate 0.75.
+CAND_0069232,44,0.90743,ML Engineer with 6.3 yrs; hybrid AI ranking score 59.6; response rate 0.63.
+CAND_0028287,45,0.907278,Data Scientist with 5.7 yrs; hybrid AI ranking score 59.59; response rate 0.60.
+CAND_0087316,46,0.907278,AI Research Engineer with 4.1 yrs; hybrid AI ranking score 59.59; response rate 0.80.
+CAND_0003791,47,0.907125,ML Engineer with 6.6 yrs; hybrid AI ranking score 59.58; response rate 0.66.
+CAND_0032527,48,0.906973,Junior ML Engineer with 3.9 yrs; hybrid AI ranking score 59.57; response rate 0.81.
+CAND_0070398,49,0.905451,Machine Learning Engineer with 7.2 yrs; hybrid AI ranking score 59.47; response rate 0.60.
+CAND_0067717,50,0.904537,AI Specialist with 6.9 yrs; hybrid AI ranking score 59.41; response rate 0.39.
+CAND_0093958,51,0.903471,Junior ML Engineer with 5.9 yrs; hybrid AI ranking score 59.34; response rate 0.62.
+CAND_0028527,52,0.901797,AI Specialist with 5.4 yrs; hybrid AI ranking score 59.23; response rate 0.90.
+CAND_0072091,53,0.90134,ML Engineer with 4.6 yrs; hybrid AI ranking score 59.2; response rate 0.60.
+CAND_0059240,54,0.900731,Junior ML Engineer with 4.0 yrs; hybrid AI ranking score 59.16; response rate 0.30.
+CAND_0016801,55,0.900579,ML Engineer with 5.3 yrs; hybrid AI ranking score 59.15; response rate 0.44.
+CAND_0066567,56,0.899665,Data Engineer with 6.5 yrs; hybrid AI ranking score 59.09; response rate 0.46.
+CAND_0015097,57,0.898904,Senior Software Engineer (ML) with 6.0 yrs; hybrid AI ranking score 59.04; response rate 0.69.
+CAND_0051630,58,0.898904,Machine Learning Engineer with 6.0 yrs; hybrid AI ranking score 59.04; response rate 0.51.
+CAND_0034849,59,0.898752,AI Research Engineer with 3.1 yrs; hybrid AI ranking score 59.03; response rate 0.29.
+CAND_0087494,60,0.898752,ML Engineer with 3.4 yrs; hybrid AI ranking score 59.03; response rate 0.41.
+CAND_0094292,61,0.898752,AI Specialist with 6.5 yrs; hybrid AI ranking score 59.03; response rate 0.53.
+CAND_0047492,62,0.898447,ML Engineer with 4.8 yrs; hybrid AI ranking score 59.01; response rate 0.71.
+CAND_0089495,63,0.898143,Senior Software Engineer (ML) with 4.3 yrs; hybrid AI ranking score 58.99; response rate 0.72.
+CAND_0021442,64,0.897686,AI Specialist with 3.9 yrs; hybrid AI ranking score 58.96; response rate 0.66.
+CAND_0015493,65,0.894793,Data Scientist with 6.4 yrs; hybrid AI ranking score 58.77; response rate 0.30.
+CAND_0040887,66,0.893879,Machine Learning Engineer with 4.7 yrs; hybrid AI ranking score 58.71; response rate 0.84.
+CAND_0065139,67,0.893879,AI Research Engineer with 5.2 yrs; hybrid AI ranking score 58.71; response rate 0.82.
+CAND_0081563,68,0.893879,ML Engineer with 6.9 yrs; hybrid AI ranking score 58.71; response rate 0.59.
+CAND_0080051,69,0.893575,Data Scientist with 5.2 yrs; hybrid AI ranking score 58.69; response rate 0.54.
+CAND_0084681,70,0.893575,AI Specialist with 3.5 yrs; hybrid AI ranking score 58.69; response rate 0.67.
+CAND_0083790,71,0.890682,Data Scientist with 3.5 yrs; hybrid AI ranking score 58.5; response rate 0.83.
+CAND_0004972,72,0.890073,ML Engineer with 6.0 yrs; hybrid AI ranking score 58.46; response rate 0.74.
+CAND_0066791,73,0.889312,Senior Software Engineer (ML) with 5.6 yrs; hybrid AI ranking score 58.41; response rate 0.42.
+CAND_0089498,74,0.889007,AI Specialist with 5.8 yrs; hybrid AI ranking score 58.39; response rate 0.40.
+CAND_0004555,75,0.887333,Senior Software Engineer (ML) with 5.0 yrs; hybrid AI ranking score 58.28; response rate 0.71.
+CAND_0031752,76,0.887333,ML Engineer with 5.0 yrs; hybrid AI ranking score 58.28; response rate 0.82.
+CAND_0078002,77,0.886571,Machine Learning Engineer with 6.3 yrs; hybrid AI ranking score 58.23; response rate 0.86.
+CAND_0008239,78,0.886419,AI Engineer with 4.0 yrs; hybrid AI ranking score 58.22; response rate 0.73.
+CAND_0038206,79,0.885201,Data Scientist with 3.5 yrs; hybrid AI ranking score 58.14; response rate 0.81.
+CAND_0066777,80,0.885049,Junior ML Engineer with 3.6 yrs; hybrid AI ranking score 58.13; response rate 0.36.
+CAND_0080344,81,0.884592,Senior Software Engineer (ML) with 4.9 yrs; hybrid AI ranking score 58.1; response rate 0.70.
+CAND_0096655,82,0.884592,Junior ML Engineer with 5.9 yrs; hybrid AI ranking score 58.1; response rate 0.80.
+CAND_0070525,83,0.883678,Senior Software Engineer (ML) with 5.4 yrs; hybrid AI ranking score 58.04; response rate 0.93.
+CAND_0019210,84,0.883526,ML Engineer with 4.4 yrs; hybrid AI ranking score 58.03; response rate 0.27.
+CAND_0014188,85,0.882308,Junior ML Engineer with 3.4 yrs; hybrid AI ranking score 57.95; response rate 0.46.
+CAND_0002344,86,0.881699,Senior Software Engineer (ML) with 4.7 yrs; hybrid AI ranking score 57.91; response rate 0.83.
+CAND_0007567,87,0.880938,AI Specialist with 6.1 yrs; hybrid AI ranking score 57.86; response rate 0.80.
+CAND_0042425,88,0.880938,AI Specialist with 3.3 yrs; hybrid AI ranking score 57.86; response rate 0.85.
+CAND_0051759,89,0.880633,AI Specialist with 6.3 yrs; hybrid AI ranking score 57.84; response rate 0.70.
+CAND_0056910,90,0.880481,Junior ML Engineer with 4.0 yrs; hybrid AI ranking score 57.83; response rate 0.28.
+CAND_0035779,91,0.878959,ML Engineer with 5.5 yrs; hybrid AI ranking score 57.73; response rate 0.70.
+CAND_0076995,92,0.878502,AI Research Engineer with 4.4 yrs; hybrid AI ranking score 57.7; response rate 0.73.
+CAND_0070202,93,0.877284,Machine Learning Engineer with 5.1 yrs; hybrid AI ranking score 57.62; response rate 0.60.
+CAND_0036604,94,0.876979,ML Engineer with 4.7 yrs; hybrid AI ranking score 57.6; response rate 0.46.
+CAND_0078508,95,0.876675,AI Research Engineer with 5.2 yrs; hybrid AI ranking score 57.58; response rate 0.34.
+CAND_0059520,96,0.874391,AI Research Engineer with 4.3 yrs; hybrid AI ranking score 57.43; response rate 0.36.
+CAND_0071033,97,0.873477,Data Scientist with 3.8 yrs; hybrid AI ranking score 57.37; response rate 0.26.
+CAND_0007391,98,0.873021,Data Scientist with 4.3 yrs; hybrid AI ranking score 57.34; response rate 0.79.
+CAND_0029714,99,0.872868,AI Specialist with 6.4 yrs; hybrid AI ranking score 57.33; response rate 0.30.
+CAND_0046132,100,0.871498,AI Research Engineer with 4.3 yrs; hybrid AI ranking score 57.24; response rate 0.94.
