@@ -26,7 +26,7 @@ if __name__ == "__main__":
         jd
     )
 
-    top_candidates = ranked[:100]
+    top_candidates = ranked[:250]
 
     semantic_results = []
 
@@ -46,6 +46,10 @@ if __name__ == "__main__":
             jd_text
         )
 
+        rule_score = c["score"]
+
+        final_score = (0.5 * rule_score+0.5 * (score * 100))
+
         semantic_results.append({
             "candidate_id":
                 c["candidate_id"],
@@ -56,15 +60,17 @@ if __name__ == "__main__":
             "title":
                 c["title"],
 
+            "rule_score":
+                rule_score,
+
             "semantic_score":
-                score
+                round(score,4),
+
+            "final_score":
+                round(final_score,2)
         })
 
-    semantic_results.sort(
-        key=lambda x:
-        x["semantic_score"],
-        reverse=True
-    )
+    semantic_results.sort(key=lambda x:x["final_score"],reverse=True)
 
     print("\nTOP 10 SEMANTIC\n")
 
