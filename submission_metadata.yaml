@@ -1,0 +1,73 @@
+team_name: "NavaHanana"
+
+primary_contact:
+name: "Hamsini Lalith Karkera"
+email: "[hamshu2007@gmail.com](mailto:hamshu2007@gmail.com)"
+phone: "+91-9902359523"
+
+team_members:
+
+* name: "Hamsini Lalith Karkera"
+  email: "[hamshu2007@gmail.com](mailto:hamshu2007@gmail.com)"
+  role: "Team Lead / ML Engineer"
+
+* name: "Nithika Satheesha Mendon"
+  email: "[nithikamendon2@gmail.com](mailto:nithikamendon2@gmail.com)"
+  role: "Data Analysis & Evaluation"
+
+github_repo: "https://github.com/Hamsini242007/D-A"
+
+sandbox_link: "TO_BE_ADDED"
+
+reproduce_command: "python src/submission.py"
+
+compute:
+platform: "Local Windows Laptop"
+cpu_cores: 10
+ram_gb: 16
+python_version: "3.14.6"
+os: "Windows 11 Home Single Language"
+uses_gpu_for_inference: false
+has_network_during_ranking: false
+pre_computation_required: false
+pre_computation_time_minutes: 0
+
+ai_tools_used:
+
+* "ChatGPT"
+
+ai_usage_summary: |
+ChatGPT was used as an engineering assistant for
+architecture discussion, debugging, code review,
+experimentation support, and documentation.
+Final ranking logic, evaluation, validation,
+experimentation, and design decisions were
+implemented and verified by the team.
+
+methodology_summary: |
+We developed a hybrid candidate ranking pipeline
+combining rule-based retrieval, behavioral
+signal analysis, honeypot detection, semantic
+reranking, and explainable ranking. Candidate
+profiles are initially scored using explicit
+features including skill overlap, experience
+matching, recruiter engagement signals, and
+profile quality. Potential honeypot candidates
+are detected using consistency checks across
+experience, salary, and behavioral signals.
+Top candidates are then reranked using
+SentenceTransformer semantic similarity
+between candidate profiles and the job
+description. Final rankings are generated
+using a weighted hybrid score combining
+symbolic and semantic relevance. The system
+processes 100,000 candidates in approximately
+111 seconds on CPU-only hardware and achieves
+a 0% honeypot rate in the final top-100 results.
+
+declarations:
+read_submission_spec: true
+code_is_original_work: true
+no_collusion: true
+honeypot_check_done: true
+reproduction_tested: true
