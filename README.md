@@ -1,321 +1,229 @@
-# NavaHanana — Intelligent Candidate Discovery & Ranking System
+# Redrob Intelligent Candidate Discovery & Ranking System
 
-## Overview
+## Team
 
-This project was developed for the **Redrob Hackathon: Intelligent Candidate Discovery & Ranking Challenge**.
+**Team Name:** NavaHanana
 
-We designed a hybrid candidate ranking pipeline that combines:
-
-* Rule-based candidate retrieval
-* Behavioral signal analysis
-* Honeypot detection
-* Semantic reranking using transformer embeddings
-* Explainable candidate recommendations
-
-The system processes **100,000 candidate profiles** and produces a ranked top-100 candidate list for a target job description while satisfying the challenge constraints:
-
-* CPU-only execution
-* No network access during ranking
-* Runtime under 5 minutes
-* Honeypot rate below 10%
+* **Hamsini Lalith Karkera** — Lead ML Engineer & System Design
+* **Nithika Satheesha Mendon** — Data Engineering & Evaluation
 
 ---
 
 ## Problem Statement
 
-Traditional resume ranking systems rely heavily on keyword matching, making them vulnerable to:
+Traditional candidate search systems rely heavily on keyword matching, resulting in poor candidate relevance, vulnerability to keyword stuffing, and inability to capture semantic similarity between candidate profiles and job descriptions.
 
-* Keyword stuffing
-* Profile inconsistencies
-* Behavioral anomalies
-* Semantically relevant candidates being overlooked
-
-Our objective was to build a robust candidate ranking system capable of:
-
-* Understanding candidate-job semantic alignment
-* Detecting suspicious candidate profiles
-* Leveraging recruiter interaction signals
-* Producing explainable rankings
+The objective of this challenge is to identify and rank the top candidates from a pool of 100,000 candidate profiles while avoiding honeypots, behavioral traps, and profile inconsistencies.
 
 ---
 
-## System Architecture
+## Solution Overview
+
+We developed a hybrid candidate ranking pipeline that combines:
+
+* Rule-based candidate retrieval
+* Behavioral signal analysis
+* Honeypot detection
+* Retrieval-based candidate filtering
+* Semantic reranking
+* Explainable ranking generation
+
+The system first narrows the candidate pool using explicit candidate-job matching signals and then performs semantic reranking on the retrieved candidate subset.
+
+---
+
+## Production Architecture
 
 ```text
-Job Description
-       |
-       v
-JD Processing
-       |
-       v
-100K Candidate Pool
-       |
-       v
+100000 Candidates
+        ↓
 Rule-Based Retrieval
-       |
-       v
-Behavioral Signal Scoring
-       |
-       v
+        ↓
+Behavioral Signal Analysis
+        ↓
 Honeypot Detection
-       |
-       v
-Top-250 Candidate Selection
-       |
-       v
-SentenceTransformer Semantic Reranking
-       |
-       v
-Hybrid Score Fusion
-       |
-       v
-Explainability Layer
-       |
-       v
-Final Top-100 Candidates
+        ↓
+Top-250 Candidate Retrieval
+        ↓
+Semantic Reranking
+        ↓
+Final Top-100 Submission
 ```
+
+---
+
+## Key Features
+
+### Hybrid Ranking
+
+Combines symbolic matching and semantic similarity scoring.
+
+### Behavioral Signal Analysis
+
+Utilizes recruiter engagement signals and profile quality indicators.
+
+### Honeypot Detection
+
+Detects profile inconsistencies using:
+
+* Experience mismatch checks
+* Invalid salary ranges
+* Behavioral anomalies
+* Activity timeline inconsistencies
+
+### Semantic Reranking
+
+Uses SentenceTransformer embeddings to identify candidates with strong contextual similarity to the target job description.
+
+### Explainable Ranking
+
+Generates human-readable explanations for candidate rankings.
 
 ---
 
 ## Methodology
 
-### 1. Job Description Processing
-
-The job description is parsed to extract:
-
-* Target role
-* Required experience
-* Required skills
-* Technical keywords
-
-Example:
-
-```text
-Machine Learning Engineer
-5 years experience
-Python
-NLP
-PyTorch
-Transformers
-AWS
-Docker
-```
-
----
-
-### 2. Rule-Based Candidate Ranking
+### Stage 1: Candidate Scoring
 
 Candidates are scored using:
 
 * Skill overlap
-* Experience matching
-* Title relevance
-* Career trajectory
-* Recruiter engagement signals
+* Role similarity
+* Experience alignment
+* Recruiter engagement metrics
 * Profile completeness
+* Career progression
 
-This stage retrieves the strongest candidates from the full pool of 100,000 candidates.
+### Stage 2: Honeypot Detection
 
----
-
-### 3. Honeypot Detection
-
-The dataset contains intentionally deceptive profiles.
-
-Our honeypot detection identifies:
+Candidate profiles are evaluated for:
 
 * Experience inconsistencies
-* Salary inconsistencies
-* Behavioral anomalies
-* Profile reliability issues
+* Salary anomalies
+* Invalid activity timelines
+* Behavioral irregularities
 
-Results:
+### Stage 3: Retrieval
 
-* Candidates analyzed: 100,000
-* Honeypots detected: 24,925
-* Honeypot rate in final Top-100: **0%**
+The highest scoring candidates are selected to form a retrieval pool of approximately 250 candidates.
 
----
+### Stage 4: Semantic Reranking
 
-### 4. Semantic Reranking
+The retrieval pool is reranked using SentenceTransformer semantic similarity between:
 
-We use:
+* Candidate profile representations
+* Target job description representation
 
-* SentenceTransformer
-* Model: `all-MiniLM-L6-v2`
+### Stage 5: Final Ranking
 
-Candidate profiles and job descriptions are embedded into a shared semantic space.
-
-The top 250 candidates from rule-based retrieval are reranked using cosine similarity.
-
----
-
-### 5. Hybrid Ranking
-
-Final ranking score:
-
-```text
-Final Score =
-0.7 × Rule Score +
-0.3 × Semantic Score
-```
-
-This combines:
-
-* explicit skill matching
-* behavioral evidence
-* semantic understanding
-
----
-
-### 6. Explainability
-
-Each candidate includes a generated explanation describing:
-
-* matched skills
-* experience relevance
-* recruiter engagement
-* profile consistency
-
-Example:
-
-> Machine Learning Engineer with 7.1 years of experience demonstrates strong alignment through Python, NLP, PyTorch, and AWS skills. The candidate also shows healthy recruiter engagement with no detected profile inconsistencies.
+Final candidate scores are generated using a weighted hybrid scoring framework.
 
 ---
 
 ## Results
 
-### Runtime Performance
+| Metric                | Result         |
+| --------------------- | -------------- |
+| Candidate Pool        | 100,000        |
+| Retrieved Candidates  | 250            |
+| Final Submission Size | 100            |
+| Runtime               | 110.74 seconds |
+| Hardware              | CPU Only       |
+| Honeypot Rate         | 0%             |
+| Top-100 Honeypots     | 0              |
 
-| Metric               | Value          |
-| -------------------- | -------------- |
-| Candidates processed | 100,000        |
-| Execution mode       | CPU only       |
-| Runtime              | 110.74 seconds |
-| Memory               | 16 GB RAM      |
-
----
-
-### Candidate Quality
-
-| Metric                          | Value      |
-| ------------------------------- | ---------- |
-| Honeypot rate                   | 0%         |
-| Average experience              | 4.93 years |
-| Average recruiter response rate | 0.60       |
-
----
-
-### Top Candidate Distribution
-
-| Role                          | Count |
-| ----------------------------- | ----- |
-| AI Research Engineer          | 20    |
-| ML Engineer                   | 19    |
-| Junior ML Engineer            | 15    |
-| Senior Software Engineer (ML) | 12    |
-| AI Specialist                 | 11    |
-| Machine Learning Engineer     | 10    |
+Top candidate analysis demonstrated strong alignment with AI and Machine Learning roles while successfully excluding all detected honeypot candidates from the final top-100 ranking.
 
 ---
 
 ## Repository Structure
 
 ```text
-indiaruns-ai-ranking/
-
-├── data/
-│   ├── candidate_schema.json
-│   ├── sample_candidates.json
-│   ├── sample_submission.csv
-│   └── submission_metadata_template.yaml
-│
-├── docs/
-│   ├── final_architecture.md
-│   ├── job_description.docx
-│   ├── README.docx
-│   ├── redrob_signals_doc.docx
-│   └── submission_spec.docx
-│
-├── notebooks/
+.
+├── data
+├── docs
+├── notebooks
 │   └── analysis.ipynb
-│
-├── outputs/
+├── outputs
 │   └── team_submission.csv
-│
-├── src/
-│   ├── analyze_top100.py
-│   ├── check_top100.py
-│   ├── embeddings.py
-│   ├── explain.py
-│   ├── final_ranker.py
-│   ├── honeypot.py
-│   ├── jd_processor.py
-│   ├── parser.py
-│   ├── ranker.py
-│   ├── scorer.py
-│   ├── semantic_ranker.py
-│   └── submission.py
-│
-├── .gitignore
+├── src
+├── app.py
+├── create_demo_set.py
+├── test_hybrid.py
 ├── README.md
 ├── requirements.txt
 ├── submission_metadata.yaml
-└── validate_submission.py
+├── validate_submission.py
+└── .gitignore
 ```
-
 
 ---
 
-## Reproducibility
-
-Install dependencies:
+## Installation
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Generate the submission:
+---
+
+## Reproducing Results
+
+Generate the final submission:
 
 ```bash
-python src/submission.py
+python -m src.submission
 ```
 
-Validate:
+Validate the submission:
 
 ```bash
 python validate_submission.py outputs/team_submission.csv
+# Expected output: Submission is valid.
+```
+
+Analyze the final top-100:
+
+```bash
+python -m src.analyze_top100
+```
+
+Check honeypot rate:
+
+```bash
+python -m src.check_top100
 ```
 
 ---
+
+## Interactive Sandbox
+
+Streamlit Demo:
+https://y4pmxssvbu93ejojxtngvu.streamlit.app/
+
+The sandbox demonstrates the retrieval and semantic reranking pipeline on a representative candidate subset derived from the original 100,000 candidate dataset.
+
+---
+
+## Repository
+
+GitHub Repository:
+
+https://github.com/Hamsini242007/D-A
 
 ## Technologies Used
 
 * Python
-* Pandas
-* NumPy
 * SentenceTransformers
 * HuggingFace Transformers
 * PyTorch
 * Scikit-Learn
+* Streamlit
+* Pandas
+* NumPy
 
 ---
 
-## Team
+## Declaration
 
-### Team NavaHanana
-
-* Hamsini Lalith Karkera — Team Lead / ML Engineer
-* Nithika Satheesha Mendon — Data Analysis & Evaluation
-
----
-
-## Challenge Compliance
-
-* ✓ CPU-only execution
-* ✓ No external API calls during ranking
-* ✓ Runtime under 5 minutes
-* ✓ Explainable rankings
-* ✓ Honeypot detection
-* ✓ Reproducible pipeline
-* ✓ Valid submission format
+This project was developed as part of the Redrob Intelligent Candidate Discovery & Ranking Challenge. AI tools were used for engineering assistance, debugging, and documentation support. Final implementation decisions, experimentation, validation, and system design were performed by the team.
