@@ -1,7 +1,7 @@
-from parser import load_candidates
-from jd_processor import process_job_description
-from final_ranker import hybrid_rank
-from honeypot import detect_honeypots
+from src.parser import load_candidates
+from src.jd_processor import process_job_description
+from src.final_ranker import hybrid_rank
+from src.honeypot import detect_honeypots
 
 
 candidates = load_candidates(

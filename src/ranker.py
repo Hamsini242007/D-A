@@ -1,6 +1,6 @@
-from parser import load_candidates
-from jd_processor import process_job_description
-from scorer import score_candidate
+from src.parser import load_candidates
+from src.jd_processor import process_job_description
+from src.scorer import score_candidate
 
 
 def rank_candidates(candidates, job):
@@ -67,9 +67,7 @@ if __name__ == "__main__":
 
     for r in rankings[:10]:
         print(r)
-from parser import load_candidates
-from jd_processor import process_job_description
-from scorer import score_candidate
+
 
 
 def rank_candidates(candidates, job):

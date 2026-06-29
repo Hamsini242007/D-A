@@ -1,7 +1,7 @@
-from embeddings import semantic_similarity
-from ranker import rank_candidates
-from parser import load_candidates
-from jd_processor import process_job_description
+from src.embeddings import semantic_similarity
+from src.ranker import rank_candidates
+from src.parser import load_candidates
+from src.jd_processor import process_job_description
 
 
 if __name__ == "__main__":

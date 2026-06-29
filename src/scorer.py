@@ -1,4 +1,4 @@
-from honeypot import detect_honeypots
+from src.honeypot import detect_honeypots
 
 
 def score_candidate(candidate, job):
@@ -133,8 +133,8 @@ def score_candidate(candidate, job):
 
 if __name__ == "__main__":
 
-    from parser import load_candidates
-    from jd_processor import process_job_description
+    from src.parser import load_candidates
+    from src.jd_processor import process_job_description
 
     candidates = load_candidates(
         "data/candidates.jsonl"

@@ -19,7 +19,7 @@ github_repo: "https://github.com/Hamsini242007/D-A"
 
 sandbox_link: "TO_BE_ADDED"
 
-reproduce_command: "python src/submission.py"
+reproduce_command: "python -m src.submission"
 
 compute:
 platform: "Local Windows Laptop"

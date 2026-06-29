@@ -86,9 +86,9 @@ def explain_candidate(candidate, job, score_result):
 
 if __name__ == "__main__":
 
-    from parser import load_candidates
-    from jd_processor import process_job_description
-    from scorer import score_candidate
+    from src.parser import load_candidates
+    from src.jd_processor import process_job_description
+    from src.scorer import score_candidate
 
     candidates = load_candidates(
         "data/candidates.jsonl"

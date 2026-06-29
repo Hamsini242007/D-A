@@ -1,8 +1,8 @@
 import pandas as pd
 
-from parser import load_candidates
-from jd_processor import process_job_description
-from final_ranker import hybrid_rank
+from src.parser import load_candidates
+from src.jd_processor import process_job_description
+from src.final_ranker import hybrid_rank
 
 
 candidates = load_candidates(

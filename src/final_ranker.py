@@ -1,7 +1,7 @@
-from parser import load_candidates
-from jd_processor import process_job_description
-from ranker import rank_candidates
-from embeddings import semantic_similarity
+from src.parser import load_candidates
+from src.jd_processor import process_job_description
+from src.ranker import rank_candidates
+from src.embeddings import semantic_similarity
 
 
 def hybrid_rank(candidates, jd, jd_text):

@@ -67,7 +67,7 @@ def semantic_similarity(
 
 if __name__ == "__main__":
 
-    from parser import load_candidates
+    from src.parser import load_candidates
 
     candidates = load_candidates(
         "data/candidates.jsonl"
