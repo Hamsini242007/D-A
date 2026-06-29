@@ -1,89 +1,179 @@
+import json
+import time
 import streamlit as st
-import pandas as pd
 
-from src.parser import load_candidates
 from src.jd_processor import process_job_description
 from src.final_ranker import hybrid_rank
 
+
 st.set_page_config(
-    page_title="Redrob Hybrid Candidate Ranking",
+    page_title="Redrob AI Candidate Ranker",
     layout="wide"
 )
 
-st.title("🚀 Redrob Hybrid Candidate Ranking System")
-
-st.markdown("""
-### Team NavaHanana
-
-Hybrid candidate ranking pipeline using:
-
-- Rule-based retrieval
-- Honeypot detection
-- Semantic reranking
-- Explainable AI ranking
-""")
-
-jd_text = st.text_area(
-    "Enter Job Description",
-    """
-Looking for Machine Learning Engineer
-with 5 years experience in
-Python, NLP, PyTorch,
-Transformers, AWS and Docker.
-""",
-    height=180
+st.title("Redrob AI Candidate Discovery & Ranking")
+st.caption(
+    "Hybrid Retrieval + Semantic Reranking System"
 )
 
-if st.button("Run Candidate Ranking"):
+# load demo candidates
+@st.cache_data
+def load_demo():
+    with open(
+        "data/demo_candidates.json",
+        "r",
+        encoding="utf-8"
+    ) as f:
+        return json.load(f)
 
-    with st.spinner("Loading candidates..."):
+candidates = load_demo()
 
-        candidates = load_candidates(
-            "data/sample_candidates.json"
-        )
+col1, col2, col3 = st.columns(3)
 
-        candidates = candidates[:100]
+col1.metric(
+    "Original Candidate Pool",
+    "100,000"
+)
 
-    with st.spinner("Processing JD..."):
+col2.metric(
+    "Retrieved Pool",
+    "250"
+)
 
-        jd = process_job_description(
-            jd_text
-        )
+col3.metric(
+    "Ranking Method",
+    "Hybrid"
+)
 
-    with st.spinner("Ranking candidates..."):
+st.success(
+    f"Loaded {len(candidates)} retrieved candidates "
+    "(from original 100,000 candidate pool)"
+)
 
-        ranked = hybrid_rank(
-            candidates,
-            jd,
-            jd_text
-        )
+jd_text = st.text_area(
+    "Job Description",
+    value="""
+Looking for Machine Learning Engineer
+with 5 years experience
+in Python, NLP, PyTorch,
+Transformers, AWS and Docker.
+""",
+    height=200
+)
 
-    st.success(
-        f"Ranked {len(candidates)} candidates"
+if st.button("Run Hybrid Ranking"):
+
+    start = time.time()
+
+    jd = process_job_description(
+        jd_text
     )
 
-    rows = []
+    results = hybrid_rank(
+        candidates,
+        jd,
+        jd_text
+    )
 
-    for r in ranked[:10]:
-
-        rows.append({
-            "Candidate":
-                r["candidate_id"],
-
-            "Title":
-                r["title"],
-
-            "Score":
-                round(
-                    r["final_score"],
-                    2
-                )
-        })
+    runtime = (
+        time.time() - start
+    )
 
     st.subheader(
         "Top Candidates"
     )
 
-    st.dataframe(
-        pd.DataFrame(rows)
+    for i, c in enumerate(
+        results[:10],
+        start=1
+    ):
+
+        with st.expander(
+            f"#{i} — "
+            f"{c['name']} "
+            f"({c['title']})"
+        ):
+
+            candidate = next(
+                x for x in candidates
+                if x["candidate_id"]
+                == c["candidate_id"]
+            )
+
+            st.write(
+                "Candidate ID:",
+                c["candidate_id"]
+            )
+
+            st.write(
+                "Experience:",
+                candidate["profile"][
+                    "years_of_experience"
+                ],
+                "years"
+            )
+
+            skills = [
+                s["name"]
+                for s in candidate["skills"][:8]
+            ]
+
+            st.write(
+                "Skills:",
+                ", ".join(skills)
+            )
+
+            st.write(
+                "Rule Score:",
+                round(
+                    c["rule_score"],
+                    2
+                )
+            )
+
+            st.write(
+                "Semantic Score:",
+                round(
+                    c["semantic_score"],
+                    4
+                )
+            )
+
+            st.write(
+                "Final Score:",
+                round(
+                    c["final_score"],
+                    2
+                )
+            )
+
+    st.success(
+        f"Completed in "
+        f"{runtime:.2f} seconds"
     )
+
+st.markdown("---")
+st.subheader("Production Architecture")
+st.code(
+    """
+100000 Candidates
+       ↓
+Rule-Based Retrieval
+       ↓
+Behavioral Signal Analysis
+       ↓
+Honeypot Detection
+       ↓
+Top-250 Candidate Retrieval
+       ↓
+Semantic Reranking
+       ↓
+Final Top-100 Submission
+""",
+    language="text",
+)
+st.write(
+    "This sandbox demonstrates the semantic reranking "
+    "stage using the retrieved candidate pool generated "
+    "from the original 100000 candidate dataset."
+)
