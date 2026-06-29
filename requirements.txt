@@ -1,0 +1,9 @@
+pandas
+numpy
+sentence-transformers
+torch
+transformers
+scikit-learn
+tqdm
+huggingface-hub
+scipy
