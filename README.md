@@ -225,16 +225,45 @@ Example:
 indiaruns-ai-ranking/
 
 ├── data/
+│   ├── candidate_schema.json
+│   ├── sample_candidates.json
+│   ├── sample_submission.csv
+│   └── submission_metadata_template.yaml
+│
 ├── docs/
+│   ├── final_architecture.md
+│   ├── job_description.docx
+│   ├── README.docx
+│   ├── redrob_signals_doc.docx
+│   └── submission_spec.docx
+│
 ├── notebooks/
+│   └── analysis.ipynb
+│
 ├── outputs/
+│   └── team_submission.csv
+│
 ├── src/
-
-├── submission_metadata.yaml
-├── requirements.txt
+│   ├── analyze_top100.py
+│   ├── check_top100.py
+│   ├── embeddings.py
+│   ├── explain.py
+│   ├── final_ranker.py
+│   ├── honeypot.py
+│   ├── jd_processor.py
+│   ├── parser.py
+│   ├── ranker.py
+│   ├── scorer.py
+│   ├── semantic_ranker.py
+│   └── submission.py
+│
+├── .gitignore
 ├── README.md
+├── requirements.txt
+├── submission_metadata.yaml
 └── validate_submission.py
 ```
+
 
 ---
 
