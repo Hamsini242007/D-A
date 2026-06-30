@@ -72,7 +72,7 @@ def score_candidate(candidate, job):
         .lower()
     )
     
-    career_score = -10
+    career_score = 0
     
     if job["role"]:
     
@@ -112,11 +112,47 @@ def score_candidate(candidate, job):
     
     # -------- Behavioral --------
     signals = candidate["redrob_signals"]
+    
+    behavioral = 0
+    
+    # Profile quality
+    behavioral += (signals["profile_completeness_score"] / 100 ) * 5
 
-    behavioral = (
-        signals["profile_completeness_score"]
-        / 100
-    ) * 10
+    # Open to work
+    if signals["open_to_work_flag"]:
+        behavioral += 5
+    else:
+        behavioral -= 5
+
+    # Recruiter response rate
+    rr = signals["recruiter_response_rate"]
+    
+    if rr >= 0.7:
+        behavioral += 8
+    elif rr >= 0.4:
+        behavioral += 4
+    elif rr <= 0.1:
+        behavioral -= 8
+
+    # Notice period
+    notice = signals["notice_period_days"]
+    
+    if notice <= 30:
+        behavioral += 5
+    elif notice > 90:
+        behavioral -= 5
+
+    # Github activity
+    behavioral += (signals["github_activity_score"] * 0.05)
+
+    # Saved by recruiters
+    behavioral += min(signals["saved_by_recruiters_30d"],5)
+
+    # Interview completion
+    behavioral += (signals["interview_completion_rate"] * 5)
+
+    # Offer acceptance
+    behavioral += (signals["offer_acceptance_rate"] * 5)
 
     score += behavioral
 

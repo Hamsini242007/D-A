@@ -37,7 +37,7 @@ col1.metric(
 
 col2.metric(
     "Retrieved Pool",
-    "250"
+    "100"
 )
 
 col3.metric(

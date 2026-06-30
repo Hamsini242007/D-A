@@ -51,26 +51,32 @@ methodology_summary: |
 
   Candidate profiles are initially scored using
   explicit features including skill overlap,
-  experience matching, recruiter engagement
-  signals, and profile quality.
+  role alignment, experience matching,
+  career progression, recruiter engagement,
+  candidate availability signals, profile
+  quality indicators, interview performance,
+  and hiring outcome signals.
 
   Potential honeypot candidates are detected using
   consistency checks across experience, salary,
-  and behavioral signals.
+  activity timelines, and behavioral signals.
 
-  The top retrieved candidates are then reranked
-  using SentenceTransformer semantic similarity
-  between candidate profiles and the target job
-  description.
+  The highest-scoring candidates are retrieved
+  into a candidate pool of 250 profiles and
+  subsequently reranked using SentenceTransformer
+  semantic similarity between candidate profiles
+  and the target job description.
 
   Final rankings are generated using a weighted
   hybrid score combining symbolic and semantic
   relevance.
 
   The system processes 100,000 candidates in
-  approximately 110.74 seconds on CPU-only
-  hardware and achieves a 0% honeypot rate
-  in the final top-100 results.
+  approximately 62.47 seconds on CPU-only
+  hardware, achieves a 0% honeypot rate in the
+  final top-100 results, and maintains an
+  average recruiter response rate of 0.72
+  among the selected candidates.
 
 declarations:
   read_submission_spec: true

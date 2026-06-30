@@ -65,7 +65,26 @@ def explain_candidate(candidate, job, score_result):
 
     if signals["profile_completeness_score"] > 80:
         reasons.append(
-            "High profile completeness"
+            f"High profile completeness ({signals['profile_completeness_score']}%)"
+        )
+
+    if signals["recruiter_response_rate"] >= 0.6:
+        reasons.append(
+            f"Strong recruiter response rate ({round(signals['recruiter_response_rate']*100)}%)"
+        )
+    elif signals["recruiter_response_rate"] <= 0.1:
+        reasons.append(
+            f"Low recruiter response rate ({round(signals['recruiter_response_rate']*100)}%)"
+        )
+
+    if signals["notice_period_days"] > 90:
+        reasons.append(
+            f"Long notice period ({signals['notice_period_days']} days)"
+        )
+
+    if signals["open_to_work_flag"]:
+        reasons.append(
+            "Actively open to work"
         )
 
     # Honeypots

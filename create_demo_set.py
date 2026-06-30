@@ -28,15 +28,15 @@ ranked = rank_candidates(
     jd
 )
 
-top250_ids = {
+top100_ids = {
     c["candidate_id"]
-    for c in ranked[:250]
+    for c in ranked[:100]
 }
 
 demo_candidates = []
 
 for candidate in candidates:
-    if candidate["candidate_id"] in top250_ids:
+    if candidate["candidate_id"] in top100_ids:
         demo_candidates.append(candidate)
 
 print(

@@ -60,7 +60,7 @@ Combines symbolic matching and semantic similarity scoring.
 
 ### Behavioral Signal Analysis
 
-Utilizes recruiter engagement signals and profile quality indicators.
+Utilizes recruiter engagement, candidate availability, profile quality, interview performance, and hiring outcome signals to improve candidate relevance and availability estimation.
 
 ### Honeypot Detection
 
@@ -90,9 +90,12 @@ Candidates are scored using:
 * Skill overlap
 * Role similarity
 * Experience alignment
+* Career progression
 * Recruiter engagement metrics
 * Profile completeness
-* Career progression
+* Candidate availability signals
+* Interview and hiring outcome signals
+* Developer activity indicators
 
 ### Stage 2: Honeypot Detection
 
@@ -122,17 +125,18 @@ Final candidate scores are generated using a weighted hybrid scoring framework.
 
 ## Results
 
-| Metric                | Result         |
-| --------------------- | -------------- |
-| Candidate Pool        | 100,000        |
-| Retrieved Candidates  | 250            |
-| Final Submission Size | 100            |
-| Runtime               | 110.74 seconds |
-| Hardware              | CPU Only       |
-| Honeypot Rate         | 0%             |
-| Top-100 Honeypots     | 0              |
+| Metric                | Result        |
+| --------------------- | ------------- |
+| Candidate Pool        | 100,000       |
+| Retrieved Candidates  | 250           |
+| Final Submission Size | 100           |
+| Runtime               | 62.47 seconds |
+| Hardware              | CPU Only      |
+| Honeypot Rate         | 0%            |
+| Top-100 Honeypots     | 0             |
+| Avg Response Rate     | 0.72          |
 
-Top candidate analysis demonstrated strong alignment with AI and Machine Learning roles while successfully excluding all detected honeypot candidates from the final top-100 ranking.
+Top candidate analysis demonstrated strong alignment with AI and Machine Learning roles while maintaining high recruiter engagement signals, improved candidate availability estimation, and successfully excluding all detected honeypot candidates from the final top-100 ranking.
 
 ---
 
@@ -201,7 +205,7 @@ python -m src.check_top100
 Streamlit Demo:
 https://y4pmxssvbu93ejojxtngvu.streamlit.app/
 
-The sandbox demonstrates the retrieval and semantic reranking pipeline on a representative candidate subset derived from the original 100,000 candidate dataset.
+The sandbox demonstrates the retrieval, behavioral analysis, and semantic reranking pipeline on a representative 100-candidate subset derived from the original 100,000 candidate dataset.
 
 ---
 

@@ -27,7 +27,10 @@ Stage 2: Rule-Based Scoring
 • Experience matching
 • Career progression
 • Recruiter engagement
+• Candidate availability
 • Profile quality
+• Interview performance
+• Hiring outcome signals
             │
             ▼
 ──────────────────────────────
@@ -35,8 +38,12 @@ Stage 3: Behavioral Analysis
 ──────────────────────────────
 • Profile completeness
 • Recruiter response signals
-• Candidate activity patterns
-• Behavioral consistency
+• Open-to-work indicators
+• Notice period analysis
+• Github activity signals
+• Recruiter interest signals
+• Interview completion patterns
+• Offer acceptance behavior
             │
             ▼
 ──────────────────────────────
@@ -93,9 +100,13 @@ Candidate profiles are initially scored using explicit matching criteria:
 * Years of experience
 * Career progression history
 * Recruiter engagement indicators
+* Candidate availability signals
 * Profile completeness metrics
+* Interview performance indicators
+* Hiring outcome signals
+* Developer activity metrics
 
-This stage generates an interpretable candidate relevance score.
+This stage generates an interpretable candidate relevance score while prioritizing candidate availability and recruiter engagement.
 
 ---
 
@@ -104,11 +115,15 @@ This stage generates an interpretable candidate relevance score.
 The system evaluates candidate behavioral attributes provided in the Redrob signal framework, including:
 
 * Profile quality indicators
-* Recruiter interaction signals
-* Activity consistency
-* Behavioral reliability measures
+* Recruiter response behavior
+* Candidate availability signals
+* Notice period constraints
+* Recruiter interest metrics
+* Developer activity indicators
+* Interview completion rates
+* Offer acceptance behavior
 
-These signals improve candidate quality estimation beyond simple keyword matching.
+These signals improve candidate quality estimation beyond simple keyword matching and provide a stronger estimate of candidate availability and hiring likelihood.
 
 ---
 
@@ -159,24 +174,26 @@ This hybrid approach balances interpretability and semantic understanding.
 
 ## Performance
 
-| Metric           | Value          |
-| ---------------- | -------------- |
-| Candidate Pool   | 100,000        |
-| Retrieval Pool   | 250            |
-| Final Submission | 100            |
-| Runtime          | 110.74 seconds |
-| Compute          | CPU Only       |
-| Honeypot Rate    | 0%             |
+| Metric               | Value         |
+| -------------------- | ------------- |
+| Candidate Pool       | 100,000       |
+| Retrieval Pool       | 250           |
+| Final Submission     | 100           |
+| Runtime              | 62.47 seconds |
+| Compute              | CPU Only      |
+| Honeypot Rate        | 0%            |
+| Avg Response Rate    | 0.72          |
 
 ---
 
 ## Design Decisions
 
-The architecture was designed around four primary objectives:
+The architecture was designed around five primary objectives:
 
 1. Maintain interpretability through explicit scoring.
 2. Improve candidate relevance using semantic representations.
-3. Minimize computational cost using retrieval-based ranking.
-4. Prevent ranking manipulation using behavioral and honeypot analysis.
+3. Prioritize candidate availability and recruiter engagement.
+4. Minimize computational cost using retrieval-based ranking.
+5. Prevent ranking manipulation using behavioral and honeypot analysis.
 
 The resulting system provides a scalable, explainable, and robust candidate ranking pipeline suitable for large-scale candidate discovery tasks.
